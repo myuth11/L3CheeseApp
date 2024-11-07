@@ -50,6 +50,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, Alert, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function App() {
     const [answer1, setAnswer1] = useState('');
@@ -73,8 +74,13 @@ export default function App() {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <Text style={styles.title}>Cheese Quiz</Text>
+            {/* Title Section */}
+            <View style={styles.titleContainer}>
+                <FontAwesome name="question-circle" size={40} color="#333" />
+                <Text style={styles.title}>Cheese Quiz</Text>
+            </View>
 
+            {/* Quiz Content */}
             <Text style={styles.question}>1. What cheese is this?</Text>
             <Image style={styles.image} source={require('./assets/cheddar.jpg')} />
             <RNPickerSelect
@@ -84,6 +90,7 @@ export default function App() {
                     { label: 'Brie', value: 'Brie' },
                     { label: 'Gouda', value: 'Gouda' },
                 ]}
+                style={pickerSelectStyles}
             />
 
             <Text style={styles.question}>2. What cheese is this?</Text>
@@ -95,6 +102,7 @@ export default function App() {
                     { label: 'Brie', value: 'Brie' },
                     { label: 'Gouda', value: 'Gouda' },
                 ]}
+                style={pickerSelectStyles}
             />
 
             <Text style={styles.question}>3. What cheese is this?</Text>
@@ -106,6 +114,7 @@ export default function App() {
                     { label: 'Brie', value: 'Brie' },
                     { label: 'Gouda', value: 'Gouda' },
                 ]}
+                style={pickerSelectStyles}
             />
 
             <TouchableOpacity style={styles.button} onPress={handleSubmit}>
@@ -119,38 +128,67 @@ const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
         padding: 20,
-        backgroundColor: '#fff',
+        backgroundColor: '#f5f5f5',
         justifyContent: 'center',
         alignItems: 'center',
     },
+    titleContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20,
+    },
     title: {
-        fontSize: 24,
+        fontSize: 26,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: 20,
+        color: '#333',
+        marginLeft: 10,
     },
     question: {
         fontSize: 18,
-        marginVertical: 10,
+        marginVertical: 15,
+        color: '#4A4A4A',
+        textAlign: 'center',
     },
     image: {
-        width: 200,
-        height: 150,
+        width: 180,
+        height: 130,
         resizeMode: 'cover',
         alignSelf: 'center',
+        borderRadius: 8,
         marginVertical: 10,
     },
     button: {
-        backgroundColor: '#841584',
-        padding: 15,
+        backgroundColor: '#0066cc',
+        paddingVertical: 12,
+        paddingHorizontal: 25,
+        borderRadius: 25,
         marginTop: 20,
         alignItems: 'center',
     },
     buttonText: {
         color: '#fff',
-        fontWeight: 'bold',
+        fontWeight: '600',
+        fontSize: 16,
     },
 });
+
+const pickerSelectStyles = StyleSheet.create({
+    inputAndroid: {
+        fontSize: 16,
+        paddingVertical: 12,
+        paddingHorizontal: 10,
+        borderWidth: 1,
+        borderColor: '#ddd',
+        borderRadius: 8,
+        color: '#333',
+        paddingRight: 30, // To ensure the text is never behind the icon
+        backgroundColor: '#fff',
+        marginVertical: 8,
+    },
+});
+
+
 
 
 
