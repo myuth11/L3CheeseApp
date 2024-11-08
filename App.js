@@ -76,7 +76,7 @@ export default function App() {
         <ScrollView contentContainerStyle={styles.container}>
             {/* Title Section */}
             <View style={styles.titleContainer}>
-                <FontAwesome name="question-circle" size={40} color="#333" />
+                <FontAwesome name="question-circle" size={40} color="#004aad" />
                 <Text style={styles.title}>Cheese Quiz</Text>
             </View>
 
@@ -128,38 +128,42 @@ const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
         padding: 20,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#f0f8ff',
         justifyContent: 'center',
         alignItems: 'center',
     },
     titleContainer: {
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center',
         marginBottom: 20,
+        backgroundColor: '#cce7ff',
+        padding: 10,
+        borderRadius: 10,
     },
     title: {
         fontSize: 26,
         fontWeight: 'bold',
-        textAlign: 'center',
-        color: '#333',
+        color: '#004aad',
         marginLeft: 10,
     },
     question: {
         fontSize: 18,
         marginVertical: 15,
-        color: '#4A4A4A',
+        color: '#333',
         textAlign: 'center',
     },
     image: {
         width: 180,
         height: 130,
         resizeMode: 'cover',
-        alignSelf: 'center',
         borderRadius: 8,
         marginVertical: 10,
+        borderWidth: 1,
+        borderColor: '#ddd',
     },
     button: {
-        backgroundColor: '#0066cc',
+        backgroundColor: '#004aad',
         paddingVertical: 12,
         paddingHorizontal: 25,
         borderRadius: 25,
@@ -182,11 +186,11 @@ const pickerSelectStyles = StyleSheet.create({
         borderColor: '#ddd',
         borderRadius: 8,
         color: '#333',
-        paddingRight: 30, // To ensure the text is never behind the icon
-        backgroundColor: '#fff',
+        backgroundColor: '#e6f2ff',
         marginVertical: 8,
     },
 });
+
 
 
 
